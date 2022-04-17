@@ -1,111 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
 <nta>
-	<declaration>chan minor_road_closed;
-chan major_road_closed,car;
+	<declaration>chan car, reset;
 
-clock global;</declaration>
+int [0,1] major_road = 0;
+int [0,1] minor_road = 0;
+
+clock global, min_clock;</declaration>
 	<template>
 		<name x="5" y="5">minor_road_light</name>
 		<declaration>// Place local declarations here.</declaration>
-		<location id="id0" x="-722" y="-306">
-			<name x="-731" y="-340">Red</name>
+		<location id="id0" x="-731" y="-918">
+			<name x="-748" y="-977">Red</name>
+			<label kind="invariant" x="-748" y="-960">min_clock &lt;= 1</label>
 		</location>
-		<location id="id1" x="-425" y="-178">
-			<name x="-399" y="-187">Green</name>
-			<label kind="invariant" x="-416" y="-170">global&lt;=36</label>
+		<location id="id1" x="-434" y="-790">
+			<name x="-408" y="-799">Green</name>
+			<label kind="invariant" x="-425" y="-782">global&lt;=36</label>
 		</location>
-		<location id="id2" x="-722" y="-178">
-			<name x="-739" y="-161">Yellow</name>
-			<label kind="invariant" x="-747" y="-144">global&lt;=41</label>
-		</location>
-		<location id="id3" x="-425" y="-306">
-			<name x="-451" y="-340">Standby</name>
-			<label kind="invariant" x="-451" y="-357">global&lt;=6</label>
+		<location id="id2" x="-731" y="-790">
+			<name x="-748" y="-773">Yellow</name>
+			<label kind="invariant" x="-756" y="-756">global&lt;=41</label>
 		</location>
 		<init ref="id0"/>
 		<transition>
-			<source ref="id3"/>
-			<target ref="id1"/>
-			<label kind="guard" x="-416" y="-255">global == 6</label>
+			<source ref="id0"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-909" y="-969">major_road == 0</label>
+			<label kind="assignment" x="-909" y="-952">min_clock := 0</label>
+			<nail x="-782" y="-960"/>
+			<nail x="-799" y="-918"/>
 		</transition>
 		<transition>
 			<source ref="id0"/>
-			<target ref="id3"/>
-			<label kind="synchronisation" x="-637" y="-331">major_road_closed?</label>
+			<target ref="id1"/>
+			<label kind="guard" x="-620" y="-943">major_road == 1 &amp;&amp; 
+global == 6</label>
+			<label kind="assignment" x="-620" y="-901">minor_road = 0</label>
 		</transition>
 		<transition>
 			<source ref="id2"/>
 			<target ref="id0"/>
-			<label kind="guard" x="-833" y="-238">global == 41</label>
-			<label kind="synchronisation" x="-858" y="-255">minor_road_closed!</label>
+			<label kind="guard" x="-833" y="-884">global == 41</label>
+			<label kind="synchronisation" x="-790" y="-901">reset!</label>
+			<label kind="assignment" x="-833" y="-867">min_clock := 0</label>
 		</transition>
 		<transition>
 			<source ref="id1"/>
 			<target ref="id2"/>
-			<label kind="guard" x="-595" y="-170">global == 36</label>
+			<label kind="guard" x="-629" y="-782">global == 36</label>
+			<label kind="assignment" x="-629" y="-765">minor_road = 1</label>
 		</transition>
 	</template>
 	<template>
 		<name>major_road_light</name>
-		<location id="id4" x="-705" y="-493">
+		<location id="id3" x="-705" y="-493">
 			<name x="-722" y="-527">Green</name>
 		</location>
-		<location id="id5" x="-416" y="-493">
+		<location id="id4" x="-416" y="-493">
 			<name x="-433" y="-527">Yellow</name>
 			<label kind="invariant" x="-442" y="-544">global&lt;=5</label>
 		</location>
-		<location id="id6" x="-416" y="-357">
+		<location id="id5" x="-416" y="-357">
 			<name x="-425" y="-348">Red</name>
-			<label kind="invariant" x="-442" y="-331">global&lt;=41</label>
+			<label kind="invariant" x="-450" y="-331">global&lt;=42</label>
 		</location>
-		<location id="id7" x="-705" y="-357">
-			<name x="-731" y="-340">Standby</name>
-			<label kind="invariant" x="-731" y="-323">global&lt;=42</label>
-		</location>
-		<init ref="id4"/>
-		<transition>
-			<source ref="id7"/>
-			<target ref="id4"/>
-			<label kind="guard" x="-790" y="-442">global == 42</label>
-		</transition>
-		<transition>
-			<source ref="id6"/>
-			<target ref="id7"/>
-			<label kind="guard" x="-612" y="-349">global == 41</label>
-		</transition>
+		<init ref="id3"/>
 		<transition>
 			<source ref="id5"/>
-			<target ref="id6"/>
-			<label kind="guard" x="-374" y="-416">global==5</label>
-			<label kind="synchronisation" x="-408" y="-433">major_road_closed!</label>
+			<target ref="id3"/>
+			<label kind="guard" x="-782" y="-425">global == 42 &amp;&amp; minor_road == 1</label>
+			<label kind="assignment" x="-782" y="-408">major_road = 0</label>
 		</transition>
 		<transition>
 			<source ref="id4"/>
 			<target ref="id5"/>
-			<label kind="synchronisation" x="-586" y="-535">car?</label>
-			<label kind="assignment" x="-595" y="-518">global:=0</label>
+			<label kind="guard" x="-399" y="-459">global==5</label>
+			<label kind="assignment" x="-399" y="-442">min_clock := 0,
+major_road = 1</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-586" y="-561">car?</label>
+			<label kind="assignment" x="-586" y="-544">global:=0</label>
 		</transition>
 	</template>
 	<template>
 		<name>minor_road_sensor</name>
-		<location id="id8" x="-33" y="-51">
+		<location id="id6" x="-33" y="-51">
 			<name x="-68" y="-93">Empty_On</name>
 		</location>
-		<location id="id9" x="-34" y="102">
+		<location id="id7" x="-34" y="102">
 			<name x="-59" y="119">Traffic_off</name>
 		</location>
-		<init ref="id8"/>
+		<init ref="id6"/>
 		<transition>
-			<source ref="id8"/>
-			<target ref="id9"/>
+			<source ref="id6"/>
+			<target ref="id7"/>
 			<label kind="synchronisation" x="25" y="8">car!</label>
 			<nail x="76" y="17"/>
 		</transition>
 		<transition>
-			<source ref="id9"/>
-			<target ref="id8"/>
-			<label kind="synchronisation" x="-272" y="17">minor_road_closed?</label>
+			<source ref="id7"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="-187" y="17">reset?</label>
 			<nail x="-144" y="25"/>
 		</transition>
 	</template>
@@ -113,11 +112,7 @@ clock global;</declaration>
     </system>
 	<queries>
 		<query>
-			<formula>A[](minor_road_sensor.Traffic_off imply minor_road_light.Green)</formula>
-			<comment></comment>
-		</query>
-		<query>
-			<formula>minor_road_sensor.Traffic_off --&gt; minor_road_light.Green</formula>
+			<formula>A&lt;&gt;minor_road_sensor.Traffic_off imply minor_road_light.Green</formula>
 			<comment></comment>
 		</query>
 		<query>
