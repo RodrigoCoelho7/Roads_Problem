@@ -26,8 +26,8 @@ clock global, min_clock;</declaration>
 		<transition>
 			<source ref="id0"/>
 			<target ref="id0"/>
-			<label kind="guard" x="-909" y="-969">major_road == 0</label>
-			<label kind="assignment" x="-909" y="-952">min_clock := 0</label>
+			<label kind="guard" x="-1037" y="-977">major_road == 0 &amp;&amp; min_clock == 1</label>
+			<label kind="assignment" x="-1028" y="-952">min_clock := 0</label>
 			<nail x="-782" y="-960"/>
 			<nail x="-799" y="-918"/>
 		</transition>
@@ -112,7 +112,7 @@ major_road = 1</label>
     </system>
 	<queries>
 		<query>
-			<formula>A&lt;&gt;minor_road_sensor.Traffic_off imply minor_road_light.Green</formula>
+			<formula>minor_road_sensor.Traffic_off --&gt; minor_road_light.Green</formula>
 			<comment></comment>
 		</query>
 		<query>
