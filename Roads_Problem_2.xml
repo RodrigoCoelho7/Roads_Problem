@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>int id_1 = 0;
+int id_2 = 0;
+int [0,1] id = 0;
+int road_one = 0;
+int road_two = 0;
+clock t1,t2;
+chan none, low,high,green;</declaration>
+	<template>
+		<name x="5" y="5">Sensor</name>
+		<parameter>int  &amp;x</parameter>
+		<declaration>// Place local declarations here.</declaration>
+		<location id="id0" x="-110" y="-76">
+			<name x="-127" y="-59">None</name>
+		</location>
+		<location id="id1" x="0" y="-153">
+			<name x="-17" y="-187">Low</name>
+		</location>
+		<location id="id2" x="102" y="-76">
+			<name x="93" y="-59">High</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="-59" y="-110">none!</label>
+			<label kind="assignment" x="-59" y="-93">x=0</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="34" y="-110">low!</label>
+			<label kind="assignment" x="34" y="-93">x=1</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="-76" y="-195">low!</label>
+			<label kind="assignment" x="-76" y="-178">x=1</label>
+			<nail x="-110" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="42" y="-195">high!</label>
+			<label kind="assignment" x="42" y="-178">x=2</label>
+			<nail x="102" y="-153"/>
+		</transition>
+	</template>
+	<template>
+		<name>Traffic_Light</name>
+		<parameter>clock &amp;t, int &amp;y</parameter>
+		<location id="id3" x="-535" y="-127">
+			<name x="-552" y="-110">Green</name>
+		</location>
+		<location id="id4" x="-433" y="-238">
+			<name x="-450" y="-272">Yellow</name>
+		</location>
+		<location id="id5" x="-331" y="-127">
+			<name x="-340" y="-110">Red</name>
+		</location>
+		<init ref="id5"/>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-450" y="-110">y == 1</label>
+			<label kind="synchronisation" x="-450" y="-127">green?</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<nail x="-331" y="-238"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<nail x="-535" y="-238"/>
+		</transition>
+	</template>
+	<template>
+		<name>Controller</name>
+		<location id="id6" x="-518" y="-187">
+			<name x="-527" y="-221">Off</name>
+		</location>
+		<location id="id7" x="-340" y="-187">
+			<name x="-357" y="-229">Traffic</name>
+			<urgent/>
+		</location>
+		<location id="id8" x="-161" y="-187">
+			<name x="-195" y="-238">Traffic_Time</name>
+			<urgent/>
+		</location>
+		<init ref="id6"/>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-442" y="17">id_1 == 0 or id_2 == 0</label>
+			<label kind="synchronisation" x="-399" y="0">green!</label>
+			<nail x="-161" y="0"/>
+			<nail x="-586" y="0"/>
+			<nail x="-586" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-280" y="-127">id_1&lt;id_2</label>
+			<label kind="assignment" x="-280" y="-110">road_one = 0,
+road_two = 1</label>
+			<nail x="-255" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-289" y="-323">id_1&gt;id_2</label>
+			<label kind="assignment" x="-289" y="-306">road_one = 1,
+road_two = 0</label>
+			<nail x="-255" y="-264"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-450" y="-127">high?</label>
+			<nail x="-433" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-442" y="-280">low?</label>
+			<nail x="-433" y="-255"/>
+		</transition>
+	</template>
+	<system>Sensor1 = Sensor(id_1);
+Sensor2 = Sensor(id_2);
+Traffic_Light1 = Traffic_Light(t1,road_one);
+Traffic_Light2= Traffic_Light(t2,road_two);
+
+system Sensor1,Sensor2,Traffic_Light1,Traffic_Light2,Controller;
+</system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
