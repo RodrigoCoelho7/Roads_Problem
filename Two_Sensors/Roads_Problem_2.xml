@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>int id_1 = 0;
+int id_2 = 0;
+int [0,1] stay = 0;
+int road_one = 0;
+int road_two = 0;
+
+int T1 = 30;
+int T2 = 30;
+
+chan change,green,red;
+clock global;</declaration>
+	<template>
+		<name x="5" y="5">Sensor</name>
+		<parameter>int  &amp;x, int &amp;y</parameter>
+		<declaration>// Place local declarations here.</declaration>
+		<location id="id0" x="-110" y="-76">
+			<name x="-127" y="-59">None</name>
+		</location>
+		<location id="id1" x="0" y="-153">
+			<name x="-17" y="-187">Low</name>
+		</location>
+		<location id="id2" x="102" y="-76">
+			<name x="93" y="-59">High</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="-76" y="-102">change!</label>
+			<label kind="assignment" x="-68" y="-85">x:=0,
+y:=0</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="8" y="-102">change!</label>
+			<label kind="assignment" x="34" y="-85">x:=1,
+y:=1</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="-102" y="-229">change!</label>
+			<label kind="assignment" x="-102" y="-212">x:=1,
+y:=1</label>
+			<nail x="-110" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="34" y="-229">change!</label>
+			<label kind="assignment" x="34" y="-212">x:=2,
+y:=1</label>
+			<nail x="102" y="-153"/>
+		</transition>
+	</template>
+	<template>
+		<name>Traffic_Light</name>
+		<parameter>int &amp;Tgreen, int &amp;y, int &amp;x</parameter>
+		<declaration>clock t;</declaration>
+		<location id="id3" x="-535" y="-127">
+			<name x="-552" y="-110">Green</name>
+		</location>
+		<location id="id4" x="-433" y="-238">
+			<name x="-450" y="-272">Yellow</name>
+		</location>
+		<location id="id5" x="-331" y="-127">
+			<name x="-340" y="-110">Red</name>
+			<label kind="invariant" x="-306" y="-136">global &lt;= 1</label>
+		</location>
+		<init ref="id5"/>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-697" y="-144">stay == 1</label>
+			<label kind="synchronisation" x="-697" y="-127">green?</label>
+			<label kind="assignment" x="-697" y="-110">t:=0</label>
+			<nail x="-562" y="-136"/>
+			<nail x="-612" y="-153"/>
+			<nail x="-612" y="-93"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-493" y="-110">y == 1 &amp;&amp; global == 1</label>
+			<label kind="synchronisation" x="-450" y="-127">green?</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-314" y="-221">t == Tgreen+5</label>
+			<label kind="assignment" x="-314" y="-204">t:=0</label>
+			<nail x="-331" y="-238"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="guard" x="-654" y="-246">t == Tgreen &amp;&amp;
+stay != 1</label>
+			<label kind="synchronisation" x="-654" y="-187">red?</label>
+			<label kind="assignment" x="-654" y="-204">y:=0</label>
+			<nail x="-535" y="-238"/>
+		</transition>
+	</template>
+	<template>
+		<name>Controller</name>
+		<location id="id6" x="-697" y="-187">
+			<name x="-723" y="-161">Off</name>
+		</location>
+		<location id="id7" x="-340" y="-187">
+			<name x="-357" y="-229">Traffic</name>
+			<urgent/>
+		</location>
+		<location id="id8" x="-510" y="-8">
+			<name x="-612" y="-51">Traffic_Time</name>
+			<label kind="invariant" x="-518" y="0">global &lt;= 1</label>
+		</location>
+		<location id="id9" x="-510" y="-187">
+			<name x="-595" y="-229">change_state</name>
+			<urgent/>
+		</location>
+		<init ref="id6"/>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-603" y="-127">id_1*id_2==0</label>
+			<label kind="assignment" x="-603" y="-110">stay:=1,
+global=1</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-459" y="-238">id_1*id_2&gt;0</label>
+			<label kind="assignment" x="-450" y="-221">stay:=0</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-646" y="-170">change?</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="-688" y="0">green!</label>
+			<nail x="-756" y="-8"/>
+			<nail x="-756" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-425" y="-144">id_1&lt;id_2</label>
+			<label kind="synchronisation" x="-425" y="-110">red!</label>
+			<label kind="assignment" x="-425" y="-127">global := 0</label>
+			<nail x="-221" y="-187"/>
+			<nail x="-221" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-297" y="-144">id_1&gt;id_2</label>
+			<label kind="synchronisation" x="-297" y="-110">red!</label>
+			<label kind="assignment" x="-297" y="-127">global := 0</label>
+			<nail x="-340" y="-93"/>
+		</transition>
+	</template>
+	<system>Sensor1 = Sensor(id_1,road_one);
+Sensor2 = Sensor(id_2,road_two);
+Traffic_Light1 = Traffic_Light(T1,road_one,id_1);
+Traffic_Light2= Traffic_Light(T2,road_two,id_2);
+
+system Sensor1,Sensor2,Traffic_Light1,Traffic_Light2,Controller;
+</system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
