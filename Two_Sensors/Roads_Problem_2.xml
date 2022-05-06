@@ -6,12 +6,15 @@ int id_2 = 0;
 int [0,1] stay = 0;
 int road_one = 0;
 int road_two = 0;
+int may_change = 0;
+int t_wait = 0;
 
 int T1 = 30;
 int T2 = 30;
 
 chan change,green,red;
-clock global;</declaration>
+clock global;
+clock t1,t2;</declaration>
 	<template>
 		<name x="5" y="5">Sensor</name>
 		<parameter>int  &amp;x, int &amp;y</parameter>
@@ -59,10 +62,10 @@ y:=1</label>
 	</template>
 	<template>
 		<name>Traffic_Light</name>
-		<parameter>int &amp;Tgreen, int &amp;y, int &amp;x</parameter>
-		<declaration>clock t;</declaration>
+		<parameter>int &amp;Tgreen, int &amp;y, int &amp;x,clock &amp;t</parameter>
 		<location id="id3" x="-535" y="-127">
 			<name x="-552" y="-110">Green</name>
+			<label kind="invariant" x="-561" y="-93">t&lt;=Tgreen</label>
 		</location>
 		<location id="id4" x="-433" y="-238">
 			<name x="-450" y="-272">Yellow</name>
@@ -77,7 +80,7 @@ y:=1</label>
 			<target ref="id3"/>
 			<label kind="guard" x="-697" y="-144">stay == 1</label>
 			<label kind="synchronisation" x="-697" y="-127">green?</label>
-			<label kind="assignment" x="-697" y="-110">t:=0</label>
+			<label kind="assignment" x="-688" y="-110">t:=0</label>
 			<nail x="-562" y="-136"/>
 			<nail x="-612" y="-153"/>
 			<nail x="-612" y="-93"/>
@@ -98,8 +101,7 @@ y:=1</label>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id4"/>
-			<label kind="guard" x="-654" y="-246">t == Tgreen &amp;&amp;
-stay != 1</label>
+			<label kind="guard" x="-697" y="-221">stay != 1 &amp;&amp; t==Tgreen</label>
 			<label kind="synchronisation" x="-654" y="-187">red?</label>
 			<label kind="assignment" x="-654" y="-204">y:=0</label>
 			<nail x="-535" y="-238"/>
@@ -120,7 +122,7 @@ stay != 1</label>
 		</location>
 		<location id="id9" x="-510" y="-187">
 			<name x="-595" y="-229">change_state</name>
-			<urgent/>
+			<label kind="invariant" x="-520" y="-170">global &lt;= t_wait</label>
 		</location>
 		<init ref="id6"/>
 		<transition>
@@ -133,13 +135,18 @@ global=1</label>
 		<transition>
 			<source ref="id9"/>
 			<target ref="id7"/>
-			<label kind="guard" x="-459" y="-238">id_1*id_2&gt;0</label>
-			<label kind="assignment" x="-450" y="-221">stay:=0</label>
+			<label kind="guard" x="-467" y="-280">id_1*id_2&gt;0 &amp;&amp;
+global == t_wait</label>
+			<label kind="assignment" x="-459" y="-246">stay:=0,
+T1 := id_1*30,
+T2 := id_2*30</label>
 		</transition>
 		<transition>
 			<source ref="id6"/>
 			<target ref="id9"/>
 			<label kind="synchronisation" x="-646" y="-170">change?</label>
+			<label kind="assignment" x="-679" y="-187">t_wait := road_one*T1 + road_two*T2,
+global := 0</label>
 		</transition>
 		<transition>
 			<source ref="id8"/>
@@ -151,25 +158,15 @@ global=1</label>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id8"/>
-			<label kind="guard" x="-425" y="-144">id_1&lt;id_2</label>
-			<label kind="synchronisation" x="-425" y="-110">red!</label>
-			<label kind="assignment" x="-425" y="-127">global := 0</label>
-			<nail x="-221" y="-187"/>
-			<nail x="-221" y="-17"/>
-		</transition>
-		<transition>
-			<source ref="id7"/>
-			<target ref="id8"/>
-			<label kind="guard" x="-297" y="-144">id_1&gt;id_2</label>
-			<label kind="synchronisation" x="-297" y="-110">red!</label>
-			<label kind="assignment" x="-297" y="-127">global := 0</label>
-			<nail x="-340" y="-93"/>
+			<label kind="synchronisation" x="-323" y="-93">red!</label>
+			<label kind="assignment" x="-331" y="-110">global := 0</label>
+			<nail x="-340" y="-8"/>
 		</transition>
 	</template>
 	<system>Sensor1 = Sensor(id_1,road_one);
 Sensor2 = Sensor(id_2,road_two);
-Traffic_Light1 = Traffic_Light(T1,road_one,id_1);
-Traffic_Light2= Traffic_Light(T2,road_two,id_2);
+Traffic_Light1 = Traffic_Light(T1,road_one,id_1,t1);
+Traffic_Light2= Traffic_Light(T2,road_two,id_2,t2);
 
 system Sensor1,Sensor2,Traffic_Light1,Traffic_Light2,Controller;
 </system>
