@@ -18,7 +18,7 @@ int T2 = 30;
 </declaration>
 	<template>
 		<name x="5" y="5">Sensor</name>
-		<parameter>int &amp;x,int &amp;y,int I</parameter>
+		<parameter>int &amp;x,int &amp;y,int I, int &amp;T</parameter>
 		<declaration>// Place local declarations here.</declaration>
 		<location id="id0" x="-110" y="-76">
 			<name x="-127" y="-59">None</name>
@@ -43,22 +43,25 @@ id:=I</label>
 			<target ref="id1"/>
 			<label kind="synchronisation" x="8" y="-102">change!</label>
 			<label kind="assignment" x="8" y="-85">x:=1,
-y:=1</label>
+y:=1,
+T:=30</label>
 		</transition>
 		<transition>
 			<source ref="id0"/>
 			<target ref="id1"/>
-			<label kind="synchronisation" x="-102" y="-204">change!</label>
-			<label kind="assignment" x="-102" y="-187">x:=1,
-y:=1</label>
+			<label kind="synchronisation" x="-110" y="-238">change!</label>
+			<label kind="assignment" x="-110" y="-221">x:=1,
+y:=1,
+T:=30</label>
 			<nail x="-110" y="-153"/>
 		</transition>
 		<transition>
 			<source ref="id1"/>
 			<target ref="id2"/>
-			<label kind="synchronisation" x="34" y="-204">change!</label>
-			<label kind="assignment" x="34" y="-187">x:=2,
-y:=1</label>
+			<label kind="synchronisation" x="34" y="-238">change!</label>
+			<label kind="assignment" x="34" y="-221">x:=2,
+y:=1,
+T:=60</label>
 			<nail x="102" y="-153"/>
 		</transition>
 	</template>
@@ -218,8 +221,14 @@ road_use:=1</label>
 		<init ref="id16"/>
 		<transition>
 			<source ref="id20"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-646" y="-544">flow1*flow2==0</label>
+			<label kind="synchronisation" x="-646" y="-527">stay!</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
 			<target ref="id22"/>
-			<label kind="guard" x="-408" y="-484">flow1+flow2!=0</label>
+			<label kind="guard" x="-408" y="-484">flow1*flow2!=0</label>
 			<label kind="synchronisation" x="-408" y="-467">next!</label>
 			<nail x="-425" y="-442"/>
 			<nail x="-280" y="-442"/>
@@ -292,8 +301,8 @@ state1:=1</label>
 			<label kind="synchronisation" x="-535" y="-586">leave?</label>
 		</transition>
 	</template>
-	<system>Sensor1 = Sensor(flow1,state1,1);
-Sensor2 = Sensor(flow2,state2,2);
+	<system>Sensor1 = Sensor(flow1,state1,1,T1);
+Sensor2 = Sensor(flow2,state2,2,T2);
 Traffic_Light1 = Traffic_Light(state1,T1,1);
 Traffic_Light2= Traffic_Light(state2,T2,2);
 Controller1 = Controller(state1);
