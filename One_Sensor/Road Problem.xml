@@ -5,14 +5,16 @@
 
 int [0,1] major_road = 0;
 int [0,1] minor_road = 0;
+int first = 0;
 
-clock global, min_clock;</declaration>
+clock global, min_clock,y ;</declaration>
 	<template>
 		<name x="5" y="5">minor_road_light</name>
 		<declaration>// Place local declarations here.</declaration>
 		<location id="id0" x="-731" y="-918">
-			<name x="-748" y="-977">Red</name>
-			<label kind="invariant" x="-748" y="-960">min_clock &lt;= 1</label>
+			<name x="-748" y="-960">Red</name>
+			<label kind="invariant" x="-824" y="-1003">first == 0 ||
+(first == 1 &amp;&amp; global&lt;=6)</label>
 		</location>
 		<location id="id1" x="-434" y="-790">
 			<name x="-408" y="-799">Green</name>
@@ -25,14 +27,6 @@ clock global, min_clock;</declaration>
 		<init ref="id0"/>
 		<transition>
 			<source ref="id0"/>
-			<target ref="id0"/>
-			<label kind="guard" x="-1037" y="-977">major_road == 0 &amp;&amp; min_clock == 1</label>
-			<label kind="assignment" x="-1028" y="-952">min_clock := 0</label>
-			<nail x="-782" y="-960"/>
-			<nail x="-799" y="-918"/>
-		</transition>
-		<transition>
-			<source ref="id0"/>
 			<target ref="id1"/>
 			<label kind="guard" x="-620" y="-943">major_road == 1 &amp;&amp; 
 global == 6</label>
@@ -43,13 +37,13 @@ global == 6</label>
 			<target ref="id0"/>
 			<label kind="guard" x="-833" y="-884">global == 41</label>
 			<label kind="synchronisation" x="-790" y="-901">reset!</label>
-			<label kind="assignment" x="-833" y="-867">min_clock := 0</label>
 		</transition>
 		<transition>
 			<source ref="id1"/>
 			<target ref="id2"/>
 			<label kind="guard" x="-629" y="-782">global == 36</label>
-			<label kind="assignment" x="-629" y="-765">minor_road = 1</label>
+			<label kind="assignment" x="-629" y="-765">minor_road = 1,
+first:=0</label>
 		</transition>
 	</template>
 	<template>
@@ -70,20 +64,21 @@ global == 6</label>
 			<source ref="id5"/>
 			<target ref="id3"/>
 			<label kind="guard" x="-782" y="-425">global == 42 &amp;&amp; minor_road == 1</label>
-			<label kind="assignment" x="-782" y="-408">major_road = 0</label>
+			<label kind="assignment" x="-782" y="-408">major_road = 0,
+y:=0</label>
 		</transition>
 		<transition>
 			<source ref="id4"/>
 			<target ref="id5"/>
 			<label kind="guard" x="-399" y="-459">global==5</label>
-			<label kind="assignment" x="-399" y="-442">min_clock := 0,
-major_road = 1</label>
+			<label kind="assignment" x="-399" y="-442">major_road = 1</label>
 		</transition>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id4"/>
 			<label kind="synchronisation" x="-586" y="-561">car?</label>
-			<label kind="assignment" x="-586" y="-544">global:=0</label>
+			<label kind="assignment" x="-586" y="-544">global:=0,
+first:=1</label>
 		</transition>
 	</template>
 	<template>
@@ -98,19 +93,24 @@ major_road = 1</label>
 		<transition>
 			<source ref="id6"/>
 			<target ref="id7"/>
-			<label kind="synchronisation" x="25" y="8">car!</label>
+			<label kind="guard" x="76" y="17">y &gt;=30</label>
+			<label kind="synchronisation" x="85" y="0">car!</label>
 			<nail x="76" y="17"/>
 		</transition>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id6"/>
-			<label kind="synchronisation" x="-187" y="17">reset?</label>
+			<label kind="synchronisation" x="-187" y="8">reset?</label>
 			<nail x="-144" y="25"/>
 		</transition>
 	</template>
 	<system>system minor_road_light,major_road_light,minor_road_sensor;
     </system>
 	<queries>
+		<query>
+			<formula>A[](major_road_light.Yellow and global == 5 )</formula>
+			<comment></comment>
+		</query>
 		<query>
 			<formula>minor_road_sensor.Traffic_off --&gt; minor_road_light.Green</formula>
 			<comment></comment>
