@@ -84,7 +84,7 @@ class ROAD:
         semaforo_change = self.semaforo.evolve_step(semaforo_change)
         if self.semaforo.state:
             if self.time == self.crossing_time:
-                self.count_cars -= 1 if self.count_cars > 0 else 0
+                self.count_cars -= 6 if self.count_cars > 5 else 0
                 self.time = 1
             else:
                 self.time += 1
@@ -97,6 +97,7 @@ class ROAD:
 
 class INTERSECTION:
     def __init__(self,Tlow,THigh):
+        self.TIMES = (Tlow,THigh)
         self.global_time = 0
         self.roads = [ROAD(Tlow,THigh,2),ROAD(Tlow,THigh,2)]
         for car in flow:
