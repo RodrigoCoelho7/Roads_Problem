@@ -54,8 +54,11 @@ class ROAD:
         self.cars = []
         self.count_cars = 0
         self.semaforo = SEMAFORO(Tlow)
-        self.time = 1
-        self.crossing_time = crossing_time
+        self.time = 0
+        self.crossing_time = 3
+        self.rate=4
+        self.delay = 2
+        self.count_delay = 0
         self.total_cars = []
         self.actual_cars = []
         self.Tlow = Tlow
@@ -77,17 +80,21 @@ class ROAD:
         car = cars.sample()
         self.count_cars += car
         self.total_cars.append(car)
-        self.actual_cars.append(self.count_cars)
 
     def evolve_step(self,time,semaforo_change):
         self.generate_cars(time)
         semaforo_change = self.semaforo.evolve_step(semaforo_change)
         if self.semaforo.state:
-            if self.time == self.crossing_time:
-                self.count_cars -= 6 if self.count_cars > 5 else 0
-                self.time = 1
+            if self.count_delay == self.delay and self.time == self.crossing_time:
+                self.count_cars = self.count_cars-self.rate if self.count_cars > self.rate-1 else 0
+                self.time=0
             else:
-                self.time += 1
+                self.count_delay += 1 if self.count_delay != self.delay else 0
+                self.time += 1 if self.count_delay == self.delay else 0
+        else:
+            self.count_delay=0
+            self.time=0
+        self.actual_cars.append(self.count_cars)
         return semaforo_change
     
     def print_road_state(self):
@@ -99,7 +106,7 @@ class INTERSECTION:
     def __init__(self,Tlow,THigh):
         self.TIMES = (Tlow,THigh)
         self.global_time = 0
-        self.roads = [ROAD(Tlow,THigh,2),ROAD(Tlow,THigh,2)]
+        self.roads = [ROAD(Tlow,THigh,1),ROAD(Tlow,THigh,1)]
         for car in flow:
             c = CAR(car)
             if c.route[0] == 'road_0_1_0' or c.route[0] == 'road_2_1_2':

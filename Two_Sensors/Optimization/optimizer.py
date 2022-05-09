@@ -5,7 +5,7 @@ from utils import INTERSECTION
 import pickle
 
 hour = 3600
-TRIALS = 1
+TRIALS = 100
 TIMEOUT = hour*1
 
 def objective(trial):
