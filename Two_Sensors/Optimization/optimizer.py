@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from utils import INTERSECTION
 
 hour = 3600
-TRIALS = 5
+TRIALS = 100
 TIMEOUT = hour*1
 
 def objective(trial):

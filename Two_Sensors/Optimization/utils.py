@@ -5,7 +5,7 @@ import json
 Binomial = tfp.distributions.Binomial
 
  
-f = open(r'C:\Users\reasc\OneDrive - Universidade do Minho (1)\Mestrado\Segundo Semestre\CCF\Roads_Problem\Two_Sensors\Optimization\flow.json')
+f = open(r'flow.json')
 flow = json.load(f)
 
 class CAR:

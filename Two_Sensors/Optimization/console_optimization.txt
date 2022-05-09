@@ -1,0 +1,207 @@
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[I 2022-05-09 14:58:29,450] Trial 0 finished with value: 80.1618722569188 and parameters: {'Tlow': 35, 'Thigh': 109}. Best is trial 0 with value: 80.1618722569188.
+  1%|▌                                                             | 1/100 [00:26<43:11, 26.17s/it, 26.17/3600 seconds]Start Evolution
+[I 2022-05-09 14:58:53,843] Trial 1 finished with value: 62.451845649885804 and parameters: {'Tlow': 23, 'Thigh': 72}. Best is trial 1 with value: 62.451845649885804.
+  2%|█▏                                                            | 2/100 [00:50<41:02, 25.13s/it, 50.57/3600 seconds]Start Evolution
+[I 2022-05-09 14:59:18,513] Trial 2 finished with value: 61.74586340045705 and parameters: {'Tlow': 51, 'Thigh': 62}. Best is trial 2 with value: 61.74586340045705.
+  3%|█▊                                                            | 3/100 [01:15<40:16, 24.92s/it, 75.24/3600 seconds]Start Evolution
+[I 2022-05-09 14:59:42,951] Trial 3 finished with value: 57.26633132541513 and parameters: {'Tlow': 34, 'Thigh': 69}. Best is trial 3 with value: 57.26633132541513.
+  4%|██▍                                                           | 4/100 [01:39<39:33, 24.73s/it, 99.67/3600 seconds]Start Evolution
+[I 2022-05-09 15:00:07,679] Trial 4 finished with value: 75.14341256972202 and parameters: {'Tlow': 51, 'Thigh': 96}. Best is trial 3 with value: 57.26633132541513.
+  5%|███                                                          | 5/100 [02:04<39:09, 24.73s/it, 124.40/3600 seconds]Start Evolution
+[I 2022-05-09 15:00:32,190] Trial 5 finished with value: 74.25286553320333 and parameters: {'Tlow': 31, 'Thigh': 95}. Best is trial 3 with value: 57.26633132541513.
+  6%|███▋                                                         | 6/100 [02:28<38:37, 24.65s/it, 148.91/3600 seconds]Start Evolution
+[I 2022-05-09 15:00:56,638] Trial 6 finished with value: 48.8822620003576 and parameters: {'Tlow': 25, 'Thigh': 47}. Best is trial 6 with value: 48.8822620003576.
+  7%|████▎                                                        | 7/100 [02:53<38:06, 24.59s/it, 173.36/3600 seconds]Start Evolution
+[I 2022-05-09 15:01:21,317] Trial 7 finished with value: 76.7003496484095 and parameters: {'Tlow': 43, 'Thigh': 105}. Best is trial 6 with value: 48.8822620003576.
+  8%|████▉                                                        | 8/100 [03:18<37:44, 24.62s/it, 198.04/3600 seconds]Start Evolution
+[I 2022-05-09 15:01:45,886] Trial 8 finished with value: 46.48575562142068 and parameters: {'Tlow': 36, 'Thigh': 44}. Best is trial 8 with value: 46.48575562142068.
+  9%|█████▍                                                       | 9/100 [03:42<37:18, 24.60s/it, 222.61/3600 seconds]Start Evolution
+[I 2022-05-09 15:02:10,485] Trial 9 finished with value: 82.67220471714306 and parameters: {'Tlow': 20, 'Thigh': 115}. Best is trial 8 with value: 46.48575562142068.
+ 10%|██████                                                      | 10/100 [04:07<36:54, 24.60s/it, 247.21/3600 seconds]Start Evolution
+[I 2022-05-09 15:02:35,003] Trial 10 finished with value: 49.720173123512936 and parameters: {'Tlow': 56, 'Thigh': 35}. Best is trial 8 with value: 46.48575562142068.
+ 11%|██████▌                                                     | 11/100 [04:31<36:27, 24.58s/it, 271.73/3600 seconds]Start Evolution
+[I 2022-05-09 15:02:59,541] Trial 11 finished with value: 40.89551822863077 and parameters: {'Tlow': 23, 'Thigh': 32}. Best is trial 11 with value: 40.89551822863077.
+ 12%|███████▏                                                    | 12/100 [04:56<36:01, 24.56s/it, 296.26/3600 seconds]Start Evolution
+[I 2022-05-09 15:03:24,187] Trial 12 finished with value: 49.60017953238739 and parameters: {'Tlow': 41, 'Thigh': 35}. Best is trial 11 with value: 40.89551822863077.
+ 13%|███████▊                                                    | 13/100 [05:20<35:39, 24.59s/it, 320.91/3600 seconds]Start Evolution
+[I 2022-05-09 15:03:48,677] Trial 13 finished with value: 42.394916912472326 and parameters: {'Tlow': 27, 'Thigh': 30}. Best is trial 11 with value: 40.89551822863077.
+ 14%|████████▍                                                   | 14/100 [05:45<35:12, 24.56s/it, 345.40/3600 seconds]Start Evolution
+[I 2022-05-09 15:04:13,232] Trial 14 finished with value: 43.711500595797666 and parameters: {'Tlow': 17, 'Thigh': 36}. Best is trial 11 with value: 40.89551822863077.
+ 15%|█████████                                                   | 15/100 [06:09<34:47, 24.56s/it, 369.95/3600 seconds]Start Evolution
+[I 2022-05-09 15:04:37,672] Trial 15 finished with value: 40.16231455694489 and parameters: {'Tlow': 25, 'Thigh': 31}. Best is trial 15 with value: 40.16231455694489.
+ 16%|█████████▌                                                  | 16/100 [06:34<34:19, 24.52s/it, 394.39/3600 seconds]Start Evolution
+[I 2022-05-09 15:05:02,134] Trial 16 finished with value: 53.15501024112937 and parameters: {'Tlow': 17, 'Thigh': 61}. Best is trial 15 with value: 40.16231455694489.
+ 17%|██████████▏                                                 | 17/100 [06:58<33:53, 24.50s/it, 418.86/3600 seconds]Start Evolution
+[I 2022-05-09 15:05:26,707] Trial 17 finished with value: 39.51495576474186 and parameters: {'Tlow': 25, 'Thigh': 30}. Best is trial 17 with value: 39.51495576474186.
+ 18%|██████████▊                                                 | 18/100 [07:23<33:31, 24.52s/it, 443.43/3600 seconds]Start Evolution
+[I 2022-05-09 15:05:51,361] Trial 18 finished with value: 46.60688077247292 and parameters: {'Tlow': 34, 'Thigh': 31}. Best is trial 17 with value: 39.51495576474186.
+ 19%|███████████▍                                                | 19/100 [07:48<33:09, 24.56s/it, 468.08/3600 seconds]Start Evolution
+[I 2022-05-09 15:06:15,878] Trial 19 finished with value: 59.43316893321813 and parameters: {'Tlow': 29, 'Thigh': 56}. Best is trial 17 with value: 39.51495576474186.
+ 20%|████████████                                                | 20/100 [08:12<32:43, 24.55s/it, 492.60/3600 seconds]Start Evolution
+[I 2022-05-09 15:06:40,655] Trial 20 finished with value: 50.2630775271471 and parameters: {'Tlow': 15, 'Thigh': 47}. Best is trial 17 with value: 39.51495576474186.
+ 21%|████████████▌                                               | 21/100 [08:37<32:24, 24.62s/it, 517.38/3600 seconds]Start Evolution
+[I 2022-05-09 15:07:06,283] Trial 21 finished with value: 41.631001596218184 and parameters: {'Tlow': 19, 'Thigh': 30}. Best is trial 17 with value: 39.51495576474186.
+ 22%|█████████████▏                                              | 22/100 [09:03<32:23, 24.92s/it, 543.01/3600 seconds]Start Evolution
+[I 2022-05-09 15:07:34,142] Trial 22 finished with value: 42.89129170460486 and parameters: {'Tlow': 28, 'Thigh': 30}. Best is trial 17 with value: 39.51495576474186.
+ 23%|█████████████▊                                              | 23/100 [09:30<33:06, 25.80s/it, 570.87/3600 seconds]Start Evolution
+[I 2022-05-09 15:07:58,732] Trial 23 finished with value: 45.04576157851337 and parameters: {'Tlow': 25, 'Thigh': 39}. Best is trial 17 with value: 39.51495576474186.
+ 24%|██████████████▍                                             | 24/100 [09:55<32:13, 25.44s/it, 595.45/3600 seconds]Start Evolution
+[I 2022-05-09 15:08:23,371] Trial 24 finished with value: 49.6789846799143 and parameters: {'Tlow': 26, 'Thigh': 40}. Best is trial 17 with value: 39.51495576474186.
+ 25%|███████████████                                             | 25/100 [10:20<31:29, 25.20s/it, 620.09/3600 seconds]Start Evolution
+[I 2022-05-09 15:08:48,690] Trial 25 finished with value: 39.89645955799018 and parameters: {'Tlow': 25, 'Thigh': 30}. Best is trial 17 with value: 39.51495576474186.
+ 26%|███████████████▌                                            | 26/100 [10:45<31:07, 25.23s/it, 645.41/3600 seconds]Start Evolution
+[I 2022-05-09 15:09:14,852] Trial 26 finished with value: 52.64545640648311 and parameters: {'Tlow': 31, 'Thigh': 48}. Best is trial 17 with value: 39.51495576474186.
+ 27%|████████████████▏                                           | 27/100 [11:11<31:02, 25.51s/it, 671.58/3600 seconds]Start Evolution
+[I 2022-05-09 15:09:40,298] Trial 27 finished with value: 43.418496346603256 and parameters: {'Tlow': 32, 'Thigh': 30}. Best is trial 17 with value: 39.51495576474186.
+ 28%|████████████████▊                                           | 28/100 [11:37<30:35, 25.49s/it, 697.02/3600 seconds]Start Evolution
+[I 2022-05-09 15:10:04,797] Trial 28 finished with value: 42.13461125014229 and parameters: {'Tlow': 17, 'Thigh': 30}. Best is trial 17 with value: 39.51495576474186.
+ 29%|█████████████████▍                                          | 29/100 [12:01<29:48, 25.19s/it, 721.52/3600 seconds]Start Evolution
+[I 2022-05-09 15:10:29,435] Trial 29 finished with value: 40.555678624242496 and parameters: {'Tlow': 25, 'Thigh': 31}. Best is trial 17 with value: 39.51495576474186.
+ 30%|██████████████████                                          | 30/100 [12:26<29:11, 25.03s/it, 746.16/3600 seconds]Start Evolution
+[I 2022-05-09 15:10:54,083] Trial 30 finished with value: 53.0103465187705 and parameters: {'Tlow': 24, 'Thigh': 54}. Best is trial 17 with value: 39.51495576474186.
+ 31%|██████████████████▌                                         | 31/100 [12:50<28:39, 24.91s/it, 770.81/3600 seconds]Start Evolution
+[I 2022-05-09 15:11:18,498] Trial 31 finished with value: 42.29641958149153 and parameters: {'Tlow': 26, 'Thigh': 33}. Best is trial 17 with value: 39.51495576474186.
+ 32%|███████████████████▏                                        | 32/100 [13:15<28:03, 24.76s/it, 795.22/3600 seconds]Start Evolution
+[I 2022-05-09 15:11:43,069] Trial 32 finished with value: 40.40382418338609 and parameters: {'Tlow': 24, 'Thigh': 30}. Best is trial 17 with value: 39.51495576474186.
+ 33%|███████████████████▊                                        | 33/100 [13:39<27:35, 24.71s/it, 819.79/3600 seconds]Start Evolution
+[I 2022-05-09 15:12:07,434] Trial 33 finished with value: 39.64638414011803 and parameters: {'Tlow': 27, 'Thigh': 30}. Best is trial 17 with value: 39.51495576474186.
+ 34%|████████████████████▍                                       | 34/100 [14:04<27:03, 24.60s/it, 844.16/3600 seconds]Start Evolution
+[I 2022-05-09 15:12:31,830] Trial 34 finished with value: 43.3172270717814 and parameters: {'Tlow': 28, 'Thigh': 31}. Best is trial 17 with value: 39.51495576474186.
+ 35%|█████████████████████                                       | 35/100 [14:28<26:35, 24.54s/it, 868.55/3600 seconds]Start Evolution
+[I 2022-05-09 15:12:56,349] Trial 35 finished with value: 39.19657054828794 and parameters: {'Tlow': 31, 'Thigh': 32}. Best is trial 35 with value: 39.19657054828794.
+ 36%|█████████████████████▌                                      | 36/100 [14:53<26:10, 24.53s/it, 893.07/3600 seconds]Start Evolution
+[I 2022-05-09 15:13:20,953] Trial 36 finished with value: 53.91099838041823 and parameters: {'Tlow': 42, 'Thigh': 51}. Best is trial 35 with value: 39.19657054828794.
+ 37%|██████████████████████▏                                     | 37/100 [15:17<25:46, 24.56s/it, 917.68/3600 seconds]Start Evolution
+[I 2022-05-09 15:13:45,339] Trial 37 finished with value: 49.64158423478753 and parameters: {'Tlow': 35, 'Thigh': 48}. Best is trial 35 with value: 39.19657054828794.
+ 38%|██████████████████████▊                                     | 38/100 [15:42<25:19, 24.50s/it, 942.06/3600 seconds]Start Evolution
+[I 2022-05-09 15:14:09,929] Trial 38 finished with value: 70.05135085683419 and parameters: {'Tlow': 17, 'Thigh': 92}. Best is trial 35 with value: 39.19657054828794.
+ 39%|███████████████████████▍                                    | 39/100 [16:06<24:56, 24.53s/it, 966.65/3600 seconds]Start Evolution
+[I 2022-05-09 15:14:34,426] Trial 39 finished with value: 65.37569389960568 and parameters: {'Tlow': 59, 'Thigh': 74}. Best is trial 35 with value: 39.19657054828794.
+ 40%|████████████████████████                                    | 40/100 [16:31<24:31, 24.52s/it, 991.15/3600 seconds]Start Evolution
+[I 2022-05-09 15:14:58,929] Trial 40 finished with value: 84.71756379770314 and parameters: {'Tlow': 32, 'Thigh': 118}. Best is trial 35 with value: 39.19657054828794.
+ 41%|████████████████████████▏                                  | 41/100 [16:55<24:06, 24.52s/it, 1015.65/3600 seconds]Start Evolution
+[I 2022-05-09 15:15:23,524] Trial 41 finished with value: 42.29986753638454 and parameters: {'Tlow': 31, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 42%|████████████████████████▊                                  | 42/100 [17:20<23:43, 24.54s/it, 1040.25/3600 seconds]Start Evolution
+[I 2022-05-09 15:15:48,140] Trial 42 finished with value: 44.52917309538368 and parameters: {'Tlow': 36, 'Thigh': 31}. Best is trial 35 with value: 39.19657054828794.
+ 43%|█████████████████████████▎                                 | 43/100 [17:44<23:20, 24.56s/it, 1064.86/3600 seconds]Start Evolution
+[I 2022-05-09 15:16:12,707] Trial 43 finished with value: 42.282208873134316 and parameters: {'Tlow': 24, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 44%|█████████████████████████▉                                 | 44/100 [18:09<22:55, 24.56s/it, 1089.43/3600 seconds]Start Evolution
+[I 2022-05-09 15:16:37,223] Trial 44 finished with value: 46.8756429025871 and parameters: {'Tlow': 30, 'Thigh': 45}. Best is trial 35 with value: 39.19657054828794.
+ 45%|██████████████████████████▌                                | 45/100 [18:33<22:30, 24.55s/it, 1113.95/3600 seconds]Start Evolution
+[I 2022-05-09 15:17:01,576] Trial 45 finished with value: 74.23440171870419 and parameters: {'Tlow': 41, 'Thigh': 88}. Best is trial 35 with value: 39.19657054828794.
+ 46%|███████████████████████████▏                               | 46/100 [18:58<22:02, 24.49s/it, 1138.30/3600 seconds]Start Evolution
+[I 2022-05-09 15:17:26,059] Trial 46 finished with value: 77.92836006778879 and parameters: {'Tlow': 50, 'Thigh': 113}. Best is trial 35 with value: 39.19657054828794.
+ 47%|███████████████████████████▋                               | 47/100 [19:22<21:37, 24.49s/it, 1162.78/3600 seconds]Start Evolution
+[I 2022-05-09 15:17:50,724] Trial 47 finished with value: 48.85554675062464 and parameters: {'Tlow': 27, 'Thigh': 45}. Best is trial 35 with value: 39.19657054828794.
+ 48%|████████████████████████████▎                              | 48/100 [19:47<21:16, 24.54s/it, 1187.45/3600 seconds]Start Evolution
+[I 2022-05-09 15:18:15,288] Trial 48 finished with value: 41.12395998347219 and parameters: {'Tlow': 27, 'Thigh': 33}. Best is trial 35 with value: 39.19657054828794.
+ 49%|████████████████████████████▉                              | 49/100 [20:12<20:51, 24.55s/it, 1212.01/3600 seconds]Start Evolution
+[I 2022-05-09 15:18:39,643] Trial 49 finished with value: 45.12114659259277 and parameters: {'Tlow': 32, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 50%|█████████████████████████████▌                             | 50/100 [20:36<20:24, 24.49s/it, 1236.37/3600 seconds]Start Evolution
+[I 2022-05-09 15:19:04,178] Trial 50 finished with value: 47.12803235323595 and parameters: {'Tlow': 21, 'Thigh': 40}. Best is trial 35 with value: 39.19657054828794.
+ 51%|██████████████████████████████                             | 51/100 [21:00<20:00, 24.50s/it, 1260.90/3600 seconds]Start Evolution
+[I 2022-05-09 15:19:28,544] Trial 51 finished with value: 41.06217587297146 and parameters: {'Tlow': 23, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 52%|██████████████████████████████▋                            | 52/100 [21:25<19:34, 24.46s/it, 1285.27/3600 seconds]Start Evolution
+[I 2022-05-09 15:19:52,975] Trial 52 finished with value: 40.7356137087487 and parameters: {'Tlow': 22, 'Thigh': 31}. Best is trial 35 with value: 39.19657054828794.
+ 53%|███████████████████████████████▎                           | 53/100 [21:49<19:09, 24.45s/it, 1309.70/3600 seconds]Start Evolution
+[I 2022-05-09 15:20:17,570] Trial 53 finished with value: 43.631673996014 and parameters: {'Tlow': 29, 'Thigh': 31}. Best is trial 35 with value: 39.19657054828794.
+ 54%|███████████████████████████████▊                           | 54/100 [22:14<18:46, 24.50s/it, 1334.29/3600 seconds]Start Evolution
+[I 2022-05-09 15:20:42,324] Trial 54 finished with value: 42.86357442694579 and parameters: {'Tlow': 23, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 55%|████████████████████████████████▍                          | 55/100 [22:39<18:25, 24.57s/it, 1359.05/3600 seconds]Start Evolution
+[I 2022-05-09 15:21:06,720] Trial 55 finished with value: 50.47176981467272 and parameters: {'Tlow': 24, 'Thigh': 49}. Best is trial 35 with value: 39.19657054828794.
+ 56%|█████████████████████████████████                          | 56/100 [23:03<17:58, 24.52s/it, 1383.44/3600 seconds]Start Evolution
+[I 2022-05-09 15:21:31,264] Trial 56 finished with value: 41.800489786286676 and parameters: {'Tlow': 27, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 57%|█████████████████████████████████▋                         | 57/100 [23:27<17:34, 24.53s/it, 1407.99/3600 seconds]Start Evolution
+[I 2022-05-09 15:21:55,724] Trial 57 finished with value: 41.06596314576716 and parameters: {'Tlow': 26, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 58%|██████████████████████████████████▏                        | 58/100 [23:52<17:09, 24.51s/it, 1432.45/3600 seconds]Start Evolution
+[I 2022-05-09 15:22:22,275] Trial 58 finished with value: 52.69722627006703 and parameters: {'Tlow': 22, 'Thigh': 48}. Best is trial 35 with value: 39.19657054828794.
+ 59%|██████████████████████████████████▊                        | 59/100 [24:18<17:09, 25.12s/it, 1459.00/3600 seconds]Start Evolution
+[I 2022-05-09 15:22:48,003] Trial 59 finished with value: 43.634965595619114 and parameters: {'Tlow': 40, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 60%|███████████████████████████████████▍                       | 60/100 [24:44<16:52, 25.30s/it, 1484.72/3600 seconds]Start Evolution
+[I 2022-05-09 15:23:12,558] Trial 60 finished with value: 45.667534909967344 and parameters: {'Tlow': 30, 'Thigh': 45}. Best is trial 35 with value: 39.19657054828794.
+ 61%|███████████████████████████████████▉                       | 61/100 [25:09<16:18, 25.08s/it, 1509.28/3600 seconds]Start Evolution
+[I 2022-05-09 15:23:36,797] Trial 61 finished with value: 41.43120441626958 and parameters: {'Tlow': 18, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 62%|████████████████████████████████████▌                      | 62/100 [25:33<15:43, 24.83s/it, 1533.52/3600 seconds]Start Evolution
+[I 2022-05-09 15:24:01,339] Trial 62 finished with value: 41.23856297302619 and parameters: {'Tlow': 26, 'Thigh': 30}. Best is trial 35 with value: 39.19657054828794.
+ 63%|█████████████████████████████████████▏                     | 63/100 [25:58<15:15, 24.74s/it, 1558.06/3600 seconds]Start Evolution
+[I 2022-05-09 15:24:25,663] Trial 63 finished with value: 45.12343165172367 and parameters: {'Tlow': 25, 'Thigh': 44}. Best is trial 35 with value: 39.19657054828794.
+ 64%|█████████████████████████████████████▊                     | 64/100 [26:22<14:46, 24.62s/it, 1582.39/3600 seconds]Start Evolution
+[I 2022-05-09 15:24:49,995] Trial 64 finished with value: 60.48159397917969 and parameters: {'Tlow': 30, 'Thigh': 75}. Best is trial 35 with value: 39.19657054828794.
+ 65%|██████████████████████████████████████▎                    | 65/100 [26:46<14:18, 24.53s/it, 1606.72/3600 seconds]Start Evolution
+[I 2022-05-09 15:25:14,577] Trial 65 finished with value: 39.102232721174175 and parameters: {'Tlow': 22, 'Thigh': 30}. Best is trial 65 with value: 39.102232721174175.
+ 66%|██████████████████████████████████████▉                    | 66/100 [27:11<13:54, 24.55s/it, 1631.30/3600 seconds]Start Evolution
+[I 2022-05-09 15:25:39,281] Trial 66 finished with value: 43.20802878299042 and parameters: {'Tlow': 17, 'Thigh': 31}. Best is trial 65 with value: 39.102232721174175.
+ 67%|███████████████████████████████████████▌                   | 67/100 [27:36<13:31, 24.59s/it, 1656.00/3600 seconds]Start Evolution
+[I 2022-05-09 15:26:03,694] Trial 67 finished with value: 47.96286919776692 and parameters: {'Tlow': 18, 'Thigh': 43}. Best is trial 65 with value: 39.102232721174175.
+ 68%|████████████████████████████████████████                   | 68/100 [28:00<13:05, 24.54s/it, 1680.42/3600 seconds]Start Evolution
+[I 2022-05-09 15:26:28,312] Trial 68 finished with value: 40.80081236331175 and parameters: {'Tlow': 22, 'Thigh': 31}. Best is trial 65 with value: 39.102232721174175.
+ 69%|████████████████████████████████████████▋                  | 69/100 [28:25<12:41, 24.56s/it, 1705.03/3600 seconds]Start Evolution
+[I 2022-05-09 15:26:53,065] Trial 69 finished with value: 43.70927600667594 and parameters: {'Tlow': 33, 'Thigh': 31}. Best is trial 65 with value: 39.102232721174175.
+ 70%|█████████████████████████████████████████▎                 | 70/100 [28:49<12:18, 24.62s/it, 1729.79/3600 seconds]Start Evolution
+[I 2022-05-09 15:27:17,719] Trial 70 finished with value: 41.94735667778229 and parameters: {'Tlow': 25, 'Thigh': 30}. Best is trial 65 with value: 39.102232721174175.
+ 71%|█████████████████████████████████████████▉                 | 71/100 [29:14<11:54, 24.63s/it, 1754.44/3600 seconds]Start Evolution
+[I 2022-05-09 15:27:42,480] Trial 71 finished with value: 46.86859166483522 and parameters: {'Tlow': 25, 'Thigh': 41}. Best is trial 65 with value: 39.102232721174175.
+ 72%|██████████████████████████████████████████▍                | 72/100 [29:39<11:30, 24.67s/it, 1779.20/3600 seconds]Start Evolution
+[I 2022-05-09 15:28:07,222] Trial 72 finished with value: 43.46913822216605 and parameters: {'Tlow': 30, 'Thigh': 32}. Best is trial 65 with value: 39.102232721174175.
+ 73%|███████████████████████████████████████████                | 73/100 [30:03<11:06, 24.69s/it, 1803.95/3600 seconds]Start Evolution
+[I 2022-05-09 15:28:31,852] Trial 73 finished with value: 43.48132137644824 and parameters: {'Tlow': 25, 'Thigh': 32}. Best is trial 65 with value: 39.102232721174175.
+ 74%|███████████████████████████████████████████▋               | 74/100 [30:28<10:41, 24.67s/it, 1828.57/3600 seconds]Start Evolution
+[I 2022-05-09 15:28:56,529] Trial 74 finished with value: 39.500128614613246 and parameters: {'Tlow': 18, 'Thigh': 30}. Best is trial 65 with value: 39.102232721174175.
+ 75%|████████████████████████████████████████████▎              | 75/100 [30:53<10:16, 24.67s/it, 1853.25/3600 seconds]Start Evolution
+[I 2022-05-09 15:29:20,966] Trial 75 finished with value: 40.432019643134815 and parameters: {'Tlow': 16, 'Thigh': 30}. Best is trial 65 with value: 39.102232721174175.
+ 76%|████████████████████████████████████████████▊              | 76/100 [31:17<09:50, 24.60s/it, 1877.69/3600 seconds]Start Evolution
+[I 2022-05-09 15:29:45,468] Trial 76 finished with value: 44.25085952467861 and parameters: {'Tlow': 16, 'Thigh': 39}. Best is trial 65 with value: 39.102232721174175.
+ 77%|█████████████████████████████████████████████▍             | 77/100 [31:42<09:25, 24.57s/it, 1902.19/3600 seconds]Start Evolution
+[I 2022-05-09 15:30:10,389] Trial 77 finished with value: 39.292195123306925 and parameters: {'Tlow': 23, 'Thigh': 31}. Best is trial 65 with value: 39.102232721174175.
+ 78%|██████████████████████████████████████████████             | 78/100 [32:07<09:02, 24.68s/it, 1927.11/3600 seconds]Start Evolution
+[I 2022-05-09 15:30:35,221] Trial 78 finished with value: 40.74507765847381 and parameters: {'Tlow': 21, 'Thigh': 30}. Best is trial 65 with value: 39.102232721174175.
+ 79%|██████████████████████████████████████████████▌            | 79/100 [32:31<08:39, 24.72s/it, 1951.94/3600 seconds]Start Evolution
+[I 2022-05-09 15:31:00,291] Trial 79 finished with value: 44.74214969162499 and parameters: {'Tlow': 19, 'Thigh': 46}. Best is trial 65 with value: 39.102232721174175.
+ 80%|███████████████████████████████████████████████▏           | 80/100 [32:57<08:16, 24.83s/it, 1977.01/3600 seconds]Start Evolution
+[I 2022-05-09 15:31:25,027] Trial 80 finished with value: 48.28239080537247 and parameters: {'Tlow': 32, 'Thigh': 45}. Best is trial 65 with value: 39.102232721174175.
+ 81%|███████████████████████████████████████████████▊           | 81/100 [33:21<07:51, 24.80s/it, 2001.75/3600 seconds]Start Evolution
+[I 2022-05-09 15:31:49,556] Trial 81 finished with value: 39.77971687254544 and parameters: {'Tlow': 21, 'Thigh': 30}. Best is trial 65 with value: 39.102232721174175.
+ 82%|████████████████████████████████████████████████▍          | 82/100 [33:46<07:24, 24.72s/it, 2026.28/3600 seconds]Start Evolution
+[I 2022-05-09 15:32:14,357] Trial 82 finished with value: 73.00064020098102 and parameters: {'Tlow': 57, 'Thigh': 97}. Best is trial 65 with value: 39.102232721174175.
+ 83%|████████████████████████████████████████████████▉          | 83/100 [34:11<07:00, 24.74s/it, 2051.08/3600 seconds]Start Evolution
+[I 2022-05-09 15:32:38,990] Trial 83 finished with value: 39.814784656426994 and parameters: {'Tlow': 16, 'Thigh': 32}. Best is trial 65 with value: 39.102232721174175.
+ 84%|█████████████████████████████████████████████████▌         | 84/100 [34:35<06:35, 24.71s/it, 2075.72/3600 seconds]Start Evolution
+[I 2022-05-09 15:33:03,708] Trial 84 finished with value: 56.866076972676304 and parameters: {'Tlow': 58, 'Thigh': 49}. Best is trial 65 with value: 39.102232721174175.
+ 85%|██████████████████████████████████████████████████▏        | 85/100 [35:00<06:10, 24.71s/it, 2100.43/3600 seconds]Start Evolution
+[I 2022-05-09 15:33:28,211] Trial 85 finished with value: 41.32909876195353 and parameters: {'Tlow': 16, 'Thigh': 32}. Best is trial 65 with value: 39.102232721174175.
+ 86%|██████████████████████████████████████████████████▋        | 86/100 [35:24<05:45, 24.65s/it, 2124.93/3600 seconds]Start Evolution
+[I 2022-05-09 15:33:52,944] Trial 86 finished with value: 47.369679444057 and parameters: {'Tlow': 16, 'Thigh': 51}. Best is trial 65 with value: 39.102232721174175.
+ 87%|███████████████████████████████████████████████████▎       | 87/100 [35:49<05:20, 24.67s/it, 2149.67/3600 seconds]Start Evolution
+[I 2022-05-09 15:34:17,533] Trial 87 finished with value: 40.74714850755711 and parameters: {'Tlow': 17, 'Thigh': 31}. Best is trial 65 with value: 39.102232721174175.
+ 88%|███████████████████████████████████████████████████▉       | 88/100 [36:14<04:55, 24.65s/it, 2174.26/3600 seconds]Start Evolution
+[I 2022-05-09 15:34:42,097] Trial 88 finished with value: 45.99785382305527 and parameters: {'Tlow': 16, 'Thigh': 43}. Best is trial 65 with value: 39.102232721174175.
+ 89%|████████████████████████████████████████████████████▌      | 89/100 [36:38<04:30, 24.62s/it, 2198.82/3600 seconds]Start Evolution
+[I 2022-05-09 15:35:06,836] Trial 89 finished with value: 38.00334668194076 and parameters: {'Tlow': 15, 'Thigh': 30}. Best is trial 89 with value: 38.00334668194076.
+ 90%|█████████████████████████████████████████████████████      | 90/100 [37:03<04:06, 24.66s/it, 2223.56/3600 seconds]Start Evolution
+[I 2022-05-09 15:35:31,697] Trial 90 finished with value: 45.516847109132826 and parameters: {'Tlow': 15, 'Thigh': 44}. Best is trial 89 with value: 38.00334668194076.
+ 91%|█████████████████████████████████████████████████████▋     | 91/100 [37:28<03:42, 24.72s/it, 2248.42/3600 seconds]Start Evolution
+[I 2022-05-09 15:35:56,191] Trial 91 finished with value: 45.02373730072495 and parameters: {'Tlow': 15, 'Thigh': 31}. Best is trial 89 with value: 38.00334668194076.
+ 92%|██████████████████████████████████████████████████████▎    | 92/100 [37:52<03:17, 24.65s/it, 2272.91/3600 seconds]Start Evolution
+[I 2022-05-09 15:36:20,870] Trial 92 finished with value: 46.03572690025181 and parameters: {'Tlow': 16, 'Thigh': 37}. Best is trial 89 with value: 38.00334668194076.
+ 93%|██████████████████████████████████████████████████████▊    | 93/100 [38:17<02:52, 24.66s/it, 2297.59/3600 seconds]Start Evolution
+[I 2022-05-09 15:36:45,368] Trial 93 finished with value: 42.10413982992529 and parameters: {'Tlow': 17, 'Thigh': 30}. Best is trial 89 with value: 38.00334668194076.
+ 94%|███████████████████████████████████████████████████████▍   | 94/100 [38:42<02:27, 24.61s/it, 2322.09/3600 seconds]Start Evolution
+[I 2022-05-09 15:37:09,922] Trial 94 finished with value: 42.33298779751079 and parameters: {'Tlow': 19, 'Thigh': 32}. Best is trial 89 with value: 38.00334668194076.
+ 95%|████████████████████████████████████████████████████████   | 95/100 [39:06<02:02, 24.59s/it, 2346.64/3600 seconds]Start Evolution
+[I 2022-05-09 15:37:37,699] Trial 95 finished with value: 43.73677904292202 and parameters: {'Tlow': 25, 'Thigh': 30}. Best is trial 89 with value: 38.00334668194076.
+ 96%|████████████████████████████████████████████████████████▋  | 96/100 [39:34<01:42, 25.55s/it, 2374.42/3600 seconds]Start Evolution
+[I 2022-05-09 15:38:02,332] Trial 96 finished with value: 40.36823302615958 and parameters: {'Tlow': 15, 'Thigh': 31}. Best is trial 89 with value: 38.00334668194076.
+ 97%|█████████████████████████████████████████████████████████▏ | 97/100 [39:59<01:15, 25.27s/it, 2399.06/3600 seconds]Start Evolution
+[I 2022-05-09 15:38:26,855] Trial 97 finished with value: 52.01970597793556 and parameters: {'Tlow': 24, 'Thigh': 49}. Best is trial 89 with value: 38.00334668194076.
+ 98%|█████████████████████████████████████████████████████████▊ | 98/100 [40:23<00:50, 25.05s/it, 2423.58/3600 seconds]Start Evolution
+[I 2022-05-09 15:38:51,493] Trial 98 finished with value: 42.154247805229446 and parameters: {'Tlow': 22, 'Thigh': 30}. Best is trial 89 with value: 38.00334668194076.
+ 99%|██████████████████████████████████████████████████████████▍| 99/100 [40:48<00:24, 24.93s/it, 2448.22/3600 seconds]Start Evolution
+[I 2022-05-09 15:39:16,097] Trial 99 finished with value: 39.2824389266335 and parameters: {'Tlow': 26, 'Thigh': 30}. Best is trial 89 with value: 38.00334668194076.
+100%|██████████████████████████████████████████████████████████| 100/100 [41:12<00:00, 24.73s/it, 2472.82/3600 seconds]
+
+
+END STUDY:
+
+
+  Best result: 38.00334668194076 TIMES: (15, 30)
