@@ -129,6 +129,7 @@ id:=I</label>
 			<name x="-2133" y="-1997">Off</name>
 		</location>
 		<location id="id9" x="-1794" y="-1980">
+			<name x="-1804" y="-2014">Traffic_On</name>
 			<label kind="invariant" x="-1768" y="-1988">t&lt;=1</label>
 		</location>
 		<location id="id10" x="-1794" y="-1878">
@@ -335,7 +336,19 @@ system Sensor1,Sensor2,Traffic_Light1,Traffic_Light2,Controller1,Controller2,Res
 			<comment></comment>
 		</query>
 		<query>
-			<formula>Sensor1.Low --&gt; Traffic_Light1.Green</formula>
+			<formula>Controller1.Traffic_On --&gt; Traffic_Light1.Green</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>Controller1.Traffic_On --&gt; Traffic_Light2.Green</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>Controller2.Traffic_On --&gt; Traffic_Light2.Green</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>Controller2.Traffic_On --&gt; Traffic_Light1.Green</formula>
 			<comment></comment>
 		</query>
 	</queries>
